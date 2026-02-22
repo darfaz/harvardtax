@@ -13,7 +13,12 @@ app.add_middleware(
 )
 
 from app.qbo.auth import router as qbo_auth_router
+from app.routes.entities import router as entities_router
+from app.routes.tax_returns import router as tax_returns_router
+
 app.include_router(qbo_auth_router)
+app.include_router(entities_router)
+app.include_router(tax_returns_router)
 
 @app.get("/health")
 async def health():
