@@ -12,6 +12,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+from app.qbo.auth import router as qbo_auth_router
+app.include_router(qbo_auth_router)
+
 @app.get("/health")
 async def health():
     return {"status": "ok"}
