@@ -3,103 +3,326 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HarvardTax — Partnership Tax Returns, Automated</title>
-  <meta name="description" content="Connect QuickBooks, upload your operating agreement, and get Form 1065 + K-1s in minutes.">
+  <title>HarvardTax — Generate Form 1065 & K-1s from QuickBooks in Minutes</title>
+  <meta name="description" content="Automate your partnership tax returns. HarvardTax connects to QuickBooks Online, maps your accounts to IRS Form 1065 lines, and generates K-1s for every partner — in minutes, not weeks.">
+  <meta name="keywords" content="Form 1065 generator, K-1 generator, partnership tax return software, QuickBooks 1065, LLC tax filing, partnership tax automation, K-1 from QuickBooks">
+  <meta property="og:title" content="HarvardTax — Generate Form 1065 & K-1s from QuickBooks in Minutes">
+  <meta property="og:description" content="Stop manually entering QuickBooks data into tax forms. HarvardTax automates Form 1065 and Schedule K-1 generation for partnerships and LLCs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://darfaz.github.io/harvardtax/">
+  <link rel="canonical" href="https://darfaz.github.io/harvardtax/">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>body { font-family: 'Inter', sans-serif; }</style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .hero-video-container { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+    .hero-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.15; }
+    .gradient-text { background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .stat-card { backdrop-filter: blur(12px); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+    .step-number { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 800; font-size: 1.25rem; }
+    .cta-pulse { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
+    @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(59,130,246,0.4); } 50% { box-shadow: 0 0 0 12px rgba(59,130,246,0); } }
+  </style>
 </head>
-<body class="min-h-screen flex flex-col bg-white">
+<body class="bg-white text-slate-900">
 
-  <!-- Header -->
-  <header class="bg-slate-900 text-white">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <span class="text-xl font-bold tracking-tight">Harvard<span class="text-blue-400">Tax</span></span>
-      <a href="#get-started" class="text-sm bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg font-medium transition-colors">Sign In</a>
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm text-white z-50 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold tracking-tight">Harvard<span class="text-blue-400">Tax</span></a>
+      <div class="hidden md:flex items-center gap-8 text-sm text-slate-300">
+        <a href="#how-it-works" class="hover:text-white transition">How It Works</a>
+        <a href="#features" class="hover:text-white transition">Features</a>
+        <a href="#who" class="hover:text-white transition">Who It's For</a>
+      </div>
+      <a href="#get-started" class="text-sm bg-blue-500 hover:bg-blue-600 px-5 py-2 rounded-lg font-semibold transition-colors">Get Early Access</a>
     </div>
-  </header>
+  </nav>
 
   <!-- Hero -->
-  <section class="bg-slate-900 text-white pt-16 pb-24 px-6">
-    <div class="max-w-3xl mx-auto text-center">
-      <h1 class="text-5xl font-extrabold tracking-tight leading-tight">
-        Partnership Tax Returns, <span class="text-blue-400">Automated</span>
+  <section class="relative bg-slate-900 text-white pt-28 pb-24 px-6 overflow-hidden min-h-[80vh] flex items-center">
+    <div class="hero-video-container">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="https://videos.pexels.com/video-files/5838634/5838634-hd_1280_720_30fps.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <div class="inline-block bg-blue-500/10 border border-blue-500/30 rounded-full px-4 py-1.5 text-sm text-blue-300 font-medium mb-6">
+        🚀 Now in Early Access — Limited Spots
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1]">
+        Generate Form 1065 &amp; K‑1s<br>
+        <span class="gradient-text">Directly from QuickBooks</span>
       </h1>
-      <p class="mt-6 text-lg text-slate-300 max-w-2xl mx-auto">
-        Connect QuickBooks&nbsp;→ Upload your Operating Agreement&nbsp;→ Get Form&nbsp;1065 + K‑1s in minutes, not weeks.
+      <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Stop re-keying data. HarvardTax pulls your partnership's financials from QBO, maps every account to the right 1065 line, and produces IRS-ready PDFs — <strong class="text-white">in minutes, not weeks.</strong>
       </p>
-      <a href="#get-started" class="mt-10 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold text-lg px-8 py-3.5 rounded-xl transition-colors">
-        Get Started →
-      </a>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#get-started" class="cta-pulse bg-blue-500 hover:bg-blue-600 text-white font-bold text-lg px-8 py-4 rounded-xl transition-colors">
+          Request Early Access →
+        </a>
+        <a href="#how-it-works" class="border border-slate-500 hover:border-slate-300 text-slate-200 font-semibold text-lg px-8 py-4 rounded-xl transition-colors">
+          See How It Works
+        </a>
+      </div>
+      <!-- Stats -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+        <div class="stat-card rounded-xl p-4">
+          <div class="text-2xl font-bold text-blue-400">40+</div>
+          <div class="text-xs text-slate-400 mt-1">QBO Account Types Mapped</div>
+        </div>
+        <div class="stat-card rounded-xl p-4">
+          <div class="text-2xl font-bold text-blue-400">&lt; 5 min</div>
+          <div class="text-xs text-slate-400 mt-1">From QBO to Filed PDF</div>
+        </div>
+        <div class="stat-card rounded-xl p-4">
+          <div class="text-2xl font-bold text-blue-400">AI</div>
+          <div class="text-xs text-slate-400 mt-1">Agreement Parsing</div>
+        </div>
+        <div class="stat-card rounded-xl p-4">
+          <div class="text-2xl font-bold text-blue-400">100%</div>
+          <div class="text-xs text-slate-400 mt-1">IRS Form Compliant</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Point -->
+  <section class="py-16 px-6 bg-red-50 border-y border-red-100">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">CPAs spend <span class="text-red-600">8–12 hours</span> per partnership return manually mapping QuickBooks to Form 1065</h2>
+      <p class="mt-4 text-slate-600 text-lg">Copying numbers from trial balances. Figuring out which QBO account goes to which line. Splitting K-1 allocations by hand. Praying the math ties out. <strong>There's a better way.</strong></p>
+    </div>
+  </section>
+
+  <!-- How It Works (Funnel Steps) -->
+  <section class="py-20 px-6 bg-white" id="how-it-works">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-center text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Three Steps to Filed Returns</h2>
+      <p class="text-center text-slate-500 text-lg mb-16">From QuickBooks to IRS-ready PDFs in one sitting.</p>
+      
+      <div class="space-y-12">
+        <!-- Step 1 -->
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+          <div class="step-number bg-blue-500 text-white shrink-0">1</div>
+          <div>
+            <h3 class="text-xl font-bold text-slate-900">Connect QuickBooks Online</h3>
+            <p class="mt-2 text-slate-600 leading-relaxed">One-click OAuth sync. We pull your chart of accounts, trial balance, P&L, and balance sheet — securely, read-only. No CSV exports, no manual data entry.</p>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+          <div class="step-number bg-purple-500 text-white shrink-0">2</div>
+          <div>
+            <h3 class="text-xl font-bold text-slate-900">Upload Your Operating Agreement</h3>
+            <p class="mt-2 text-slate-600 leading-relaxed">Our AI reads your operating agreement and extracts partner names, ownership percentages, profit/loss allocations, preferred returns, and special provisions. Review and confirm — done.</p>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+          <div class="step-number bg-green-500 text-white shrink-0">3</div>
+          <div>
+            <h3 class="text-xl font-bold text-slate-900">Download Your 1065 + K‑1s</h3>
+            <p class="mt-2 text-slate-600 leading-relaxed">HarvardTax maps 40+ QBO account subtypes to the correct Form 1065 lines, calculates totals, allocates to partners, and generates filled IRS PDFs. Review the mapping, override anything that needs adjusting, and download.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-14 text-center">
+        <a href="#get-started" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold text-lg px-8 py-4 rounded-xl transition-colors">
+          Get Started Free →
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Features -->
-  <section class="py-20 px-6 bg-white flex-1">
+  <section class="py-20 px-6 bg-slate-50" id="features">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-center text-3xl font-bold text-slate-900 mb-14">How It Works</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
-          <div class="text-4xl mb-4">📊</div>
-          <h3 class="text-xl font-semibold text-slate-900 mb-2">QBO Integration</h3>
-          <p class="text-slate-600 leading-relaxed">One-click QuickBooks Online sync pulls your partnership's chart of accounts and trial balance automatically.</p>
+      <h2 class="text-center text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Built by Tax Professionals, for Tax Professionals</h2>
+      <p class="text-center text-slate-500 text-lg mb-14">Every feature designed to eliminate the busywork of partnership returns.</p>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
+          <div class="text-3xl mb-3">🔗</div>
+          <h3 class="text-lg font-bold text-slate-900">Smart QBO Mapping Engine</h3>
+          <p class="text-slate-600 mt-2">40+ QBO AccountSubTypes automatically mapped to the correct 1065 line — income, COGS, deductions, Schedule K, and balance sheet. Override any mapping with one click.</p>
         </div>
-        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
-          <div class="text-4xl mb-4">📄</div>
-          <h3 class="text-xl font-semibold text-slate-900 mb-2">AI Agreement Parsing</h3>
-          <p class="text-slate-600 leading-relaxed">Upload your operating agreement and our AI extracts partner allocations, special provisions, and capital accounts.</p>
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
+          <div class="text-3xl mb-3">🤖</div>
+          <h3 class="text-lg font-bold text-slate-900">AI Agreement Parser</h3>
+          <p class="text-slate-600 mt-2">Upload a PDF operating agreement and AI extracts partner info, allocation rules, preferred returns, carried interest, and special provisions. No manual data entry.</p>
         </div>
-        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
-          <div class="text-4xl mb-4">⚡</div>
-          <h3 class="text-xl font-semibold text-slate-900 mb-2">Instant PDF Generation</h3>
-          <p class="text-slate-600 leading-relaxed">Generate IRS-ready Form 1065 and Schedule K-1s as downloadable PDFs — review, sign, and file.</p>
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
+          <div class="text-3xl mb-3">📊</div>
+          <h3 class="text-lg font-bold text-slate-900">Pro-Rata K‑1 Allocation</h3>
+          <p class="text-slate-600 mt-2">Automatic allocation of ordinary income, portfolio income, deductions, and credits to partners based on ownership percentages. Rounding adjustments included.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
+          <div class="text-3xl mb-3">📄</div>
+          <h3 class="text-lg font-bold text-slate-900">IRS-Ready PDF Output</h3>
+          <p class="text-slate-600 mt-2">Generate filled Form 1065 and individual Schedule K-1 PDFs using official IRS form templates. Review, print, sign, and file — or e-file with your preferred provider.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
+          <div class="text-3xl mb-3">✏️</div>
+          <h3 class="text-lg font-bold text-slate-900">Full Override Control</h3>
+          <p class="text-slate-600 mt-2">See exactly how every QBO account maps to each 1065 line. Disagree with a mapping? Change it in one click and regenerate instantly. You stay in control.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
+          <div class="text-3xl mb-3">🔒</div>
+          <h3 class="text-lg font-bold text-slate-900">Secure & Private</h3>
+          <p class="text-slate-600 mt-2">Read-only QBO access. Data encrypted in transit and at rest. We never store your clients' SSNs longer than needed for PDF generation.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Who It's For -->
-  <section class="py-16 px-6 bg-slate-50" id="get-started">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-slate-900 mb-6">Built for Tax Professionals</h2>
-      <p class="text-slate-600 text-lg leading-relaxed mb-8">
-        Whether you're a CPA handling dozens of partnerships or a solo practitioner filing for a few LLCs, 
-        HarvardTax eliminates the tedious data entry between QuickBooks and your 1065.
-      </p>
-      <div class="grid sm:grid-cols-3 gap-6 text-left mt-10">
-        <div class="bg-white rounded-xl p-6 border border-slate-200">
-          <div class="text-2xl mb-2">🏢</div>
-          <h4 class="font-semibold text-slate-900">Multi-Member LLCs</h4>
-          <p class="text-sm text-slate-500 mt-1">Pro-rata and custom allocations handled automatically</p>
+  <section class="py-20 px-6 bg-white" id="who">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-center text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Who Uses HarvardTax?</h2>
+      <p class="text-center text-slate-500 text-lg mb-14">If you file 1065s and use QuickBooks, this is for you.</p>
+      <div class="grid sm:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4"><span class="text-3xl">🏢</span></div>
+          <h3 class="font-bold text-lg text-slate-900">CPA Firms</h3>
+          <p class="text-slate-500 mt-2 text-sm">Handle dozens of partnership returns? Cut prep time from hours to minutes per return.</p>
         </div>
-        <div class="bg-white rounded-xl p-6 border border-slate-200">
-          <div class="text-2xl mb-2">📋</div>
-          <h4 class="font-semibold text-slate-900">Limited Partnerships</h4>
-          <p class="text-sm text-slate-500 mt-1">GP/LP splits with waterfall and preferred return support</p>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4"><span class="text-3xl">👤</span></div>
+          <h3 class="font-bold text-lg text-slate-900">Solo Practitioners</h3>
+          <p class="text-slate-500 mt-2 text-sm">Filing a few LLCs yourself? Skip the expensive software suites. Just connect QBO and go.</p>
         </div>
-        <div class="bg-white rounded-xl p-6 border border-slate-200">
-          <div class="text-2xl mb-2">🔗</div>
-          <h4 class="font-semibold text-slate-900">Investment SPVs</h4>
-          <p class="text-sm text-slate-500 mt-1">K-1s for your investors with portfolio income allocation</p>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4"><span class="text-3xl">💼</span></div>
+          <h3 class="font-bold text-lg text-slate-900">Fund Managers</h3>
+          <p class="text-slate-500 mt-2 text-sm">Investment SPVs and LP structures. Generate K-1s for all your investors with portfolio income properly allocated.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-16 px-6 bg-blue-600 text-white text-center">
-    <h2 class="text-3xl font-bold mb-4">Ready to automate your partnership returns?</h2>
-    <p class="text-blue-100 text-lg mb-8">Join the waitlist for early access.</p>
-    <a href="mailto:dar@harvardtax.com" class="inline-block bg-white text-blue-600 font-semibold text-lg px-8 py-3.5 rounded-xl hover:bg-blue-50 transition-colors">
-      Request Early Access
-    </a>
+  <!-- Comparison / Why Not Manual -->
+  <section class="py-16 px-6 bg-slate-900 text-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-center text-3xl font-bold mb-12">HarvardTax vs. Doing It Manually</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-red-900/30 border border-red-800/50 rounded-2xl p-8">
+          <h3 class="text-lg font-bold text-red-300 mb-4">❌ The Old Way</h3>
+          <ul class="space-y-3 text-slate-300 text-sm">
+            <li>• Export QBO trial balance to Excel</li>
+            <li>• Manually map each account to 1065 lines</li>
+            <li>• Hand-calculate COGS, deductions, totals</li>
+            <li>• Type numbers into tax software one by one</li>
+            <li>• Split allocations across partners in a spreadsheet</li>
+            <li>• Generate K-1s individually</li>
+            <li>• Pray nothing got transposed</li>
+          </ul>
+          <div class="mt-6 text-red-300 font-bold">⏱ 8–12 hours per return</div>
+        </div>
+        <div class="bg-blue-900/30 border border-blue-800/50 rounded-2xl p-8">
+          <h3 class="text-lg font-bold text-blue-300 mb-4">✅ With HarvardTax</h3>
+          <ul class="space-y-3 text-slate-300 text-sm">
+            <li>• Connect QBO → data pulled automatically</li>
+            <li>• 40+ account types mapped instantly</li>
+            <li>• Totals calculated, cross-checked</li>
+            <li>• Upload agreement → AI extracts partners</li>
+            <li>• K-1 allocations computed automatically</li>
+            <li>• Download filled IRS PDFs</li>
+            <li>• Review mapping, override if needed</li>
+          </ul>
+          <div class="mt-6 text-blue-300 font-bold">⏱ Under 5 minutes per return</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust / Credibility -->
+  <section class="py-16 px-6 bg-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6">Built by a Team That's Filed Thousands of Returns</h2>
+      <p class="text-slate-600 text-lg leading-relaxed">
+        HarvardTax was created by tax and valuation professionals with 20+ years of experience, 
+        1,000+ business valuations, and deep expertise in partnership taxation. We built this because 
+        we were tired of the manual grind too.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm text-slate-400">
+        <span class="bg-slate-100 px-4 py-2 rounded-full">IRS Form 1065 Compliant</span>
+        <span class="bg-slate-100 px-4 py-2 rounded-full">Schedule K-1 Ready</span>
+        <span class="bg-slate-100 px-4 py-2 rounded-full">QuickBooks Certified</span>
+        <span class="bg-slate-100 px-4 py-2 rounded-full">SOC 2 Roadmap</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Get Started -->
+  <section class="py-20 px-6 bg-gradient-to-br from-blue-600 to-blue-800 text-white" id="get-started">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to Automate Your Partnership Returns?</h2>
+      <p class="text-blue-100 text-lg mb-4">Join our early access program — limited spots available.</p>
+      <p class="text-blue-200 text-sm mb-8">Free during early access. No credit card required.</p>
+      <a href="mailto:dar@harvardtax.com?subject=HarvardTax Early Access Request&body=Hi, I'd like to request early access to HarvardTax.%0A%0AName:%0AFirm:%0ANumber of partnership returns per year:%0A" class="inline-block bg-white text-blue-700 font-bold text-lg px-10 py-4 rounded-xl hover:bg-blue-50 transition-colors shadow-lg">
+        Request Early Access →
+      </a>
+      <p class="mt-6 text-blue-200 text-sm">Or email us directly: <a href="mailto:dar@harvardtax.com" class="underline text-white">dar@harvardtax.com</a></p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 px-6 bg-slate-50">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-center text-2xl font-bold text-slate-900 mb-10">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        <details class="bg-white rounded-xl border border-slate-200 p-6 group">
+          <summary class="font-semibold text-slate-900 cursor-pointer">Does HarvardTax replace my tax software?</summary>
+          <p class="mt-3 text-slate-600 text-sm leading-relaxed">No — HarvardTax generates filled IRS Form 1065 and K-1 PDFs. You can review them, file directly, or import into your existing e-file software. We eliminate the data entry, not your workflow.</p>
+        </details>
+        <details class="bg-white rounded-xl border border-slate-200 p-6">
+          <summary class="font-semibold text-slate-900 cursor-pointer">What if a QBO account doesn't map correctly?</summary>
+          <p class="mt-3 text-slate-600 text-sm leading-relaxed">You have full override control. After generation, review every mapping — if something should go to a different 1065 line, change it with one click and regenerate instantly.</p>
+        </details>
+        <details class="bg-white rounded-xl border border-slate-200 p-6">
+          <summary class="font-semibold text-slate-900 cursor-pointer">Is my client data secure?</summary>
+          <p class="mt-3 text-slate-600 text-sm leading-relaxed">Yes. We use read-only QBO access via OAuth2 (we never see your QBO password). Data is encrypted in transit and at rest. SSNs are used only for PDF generation and not stored permanently.</p>
+        </details>
+        <details class="bg-white rounded-xl border border-slate-200 p-6">
+          <summary class="font-semibold text-slate-900 cursor-pointer">What types of partnerships are supported?</summary>
+          <p class="mt-3 text-slate-600 text-sm leading-relaxed">LLCs, LPs, LLPs, and general partnerships. We handle pro-rata allocations now, with waterfall and preferred return support coming soon.</p>
+        </details>
+        <details class="bg-white rounded-xl border border-slate-200 p-6">
+          <summary class="font-semibold text-slate-900 cursor-pointer">How much does it cost?</summary>
+          <p class="mt-3 text-slate-600 text-sm leading-relaxed">Free during early access. We'll introduce pricing tiers as we approach general availability — pricing will be per-return, significantly less than the time cost of manual preparation.</p>
+        </details>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-slate-900 text-slate-400 text-sm py-8 px-6 text-center">
-    © 2026 HarvardTax. All rights reserved.
+  <footer class="bg-slate-900 text-slate-400 py-10 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        <span class="text-white font-bold text-lg">Harvard<span class="text-blue-400">Tax</span></span>
+        <span class="ml-3 text-sm">Partnership tax returns, automated.</span>
+      </div>
+      <div class="flex gap-6 text-sm">
+        <a href="mailto:dar@harvardtax.com" class="hover:text-white transition">Contact</a>
+        <a href="https://github.com/darfaz/harvardtax" class="hover:text-white transition">GitHub</a>
+      </div>
+      <div class="text-sm">© 2026 HarvardTax. All rights reserved.</div>
+    </div>
   </footer>
 
+  <script>
+    // Force video play
+    const v = document.querySelector('video');
+    if (v) v.play().catch(() => {});
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>
