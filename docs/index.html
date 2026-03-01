@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HarvardTax — The Partnership Tax Intelligence Engine</title>
-  <meta name="description" content="Partnership tax returns, powered by AI. Get your 1065 & K-1s filed by a licensed CPA — or automate your firm's partnership prep with our intelligence engine. QuickBooks integration, AI agreement parsing, Drake export.">
-  <meta name="keywords" content="Form 1065, K-1 generator, partnership tax return, QuickBooks 1065, LLC tax filing, partnership tax automation, Drake trial balance import, CPA partnership returns">
-  <meta property="og:title" content="HarvardTax — The Partnership Tax Intelligence Engine">
-  <meta property="og:description" content="Partnership returns filed for you by a CPA — or automate your firm's 1065 prep. AI-powered mapping, allocation, and Drake export.">
+  <title>HarvardTax — Fund Compliance in a Box | Valuations + Tax + K-1s for Venture Funds</title>
+  <meta name="description" content="The only platform that combines ASC 820 portfolio valuations and partnership tax returns (1065 + K-1s) in one engagement. Built for emerging fund managers, syndicates, and SPVs. From $4,999/year.">
+  <meta name="keywords" content="fund compliance, ASC 820 valuation, portfolio valuation venture fund, Form 1065 fund, K-1 preparation fund, fund administration emerging manager, SPV tax return, syndicate K-1, venture fund tax, partnership tax return fund">
+  <meta property="og:title" content="HarvardTax — Fund Compliance in a Box">
+  <meta property="og:description" content="Portfolio valuations + tax returns + K-1s in one engagement. Built for emerging fund managers who are tired of coordinating 3 vendors for basic compliance.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://harvardtax.com/">
   <link rel="canonical" href="https://harvardtax.com/">
@@ -17,14 +17,17 @@
   <style>
     body { font-family: 'Inter', sans-serif; }
     .hero-video-container { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
-    .hero-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.15; }
-    .gradient-text { background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.12; }
+    .gradient-text { background: linear-gradient(135deg, #34d399, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .gradient-text-purple { background: linear-gradient(135deg, #a78bfa, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .stat-card { backdrop-filter: blur(12px); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
-    .step-number { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 800; font-size: 1.25rem; }
+    .step-number { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 800; font-size: 1.25rem; flex-shrink: 0; }
     .cta-pulse { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
-    @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(59,130,246,0.4); } 50% { box-shadow: 0 0 0 12px rgba(59,130,246,0); } }
+    @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(52,211,153,0.4); } 50% { box-shadow: 0 0 0 12px rgba(52,211,153,0); } }
     .path-card { transition: transform 0.2s, box-shadow 0.2s; }
     .path-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+    .vendor-line { position: relative; }
+    .vendor-line::after { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: rgba(239,68,68,0.2); }
   </style>
 </head>
 <body class="bg-white text-slate-900">
@@ -32,387 +35,413 @@
   <!-- Nav -->
   <nav class="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm text-white z-50 border-b border-slate-800">
     <div class="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between">
-      <a href="#" class="text-xl font-bold tracking-tight">Harvard<span class="text-blue-400">Tax</span></a>
+      <a href="#" class="text-xl font-bold tracking-tight">Harvard<span class="text-emerald-400">Tax</span></a>
       <div class="hidden md:flex items-center gap-8 text-sm text-slate-300">
+        <a href="#problem" class="hover:text-white transition">The Problem</a>
         <a href="#how-it-works" class="hover:text-white transition">How It Works</a>
-        <a href="#engine" class="hover:text-white transition">The Engine</a>
         <a href="#pricing" class="hover:text-white transition">Pricing</a>
-        <a href="#cpa-partners" class="hover:text-white transition">For CPAs</a>
+        <a href="#for-cpas" class="hover:text-white transition">For CPAs</a>
       </div>
-      <a href="#get-started" class="text-sm bg-blue-500 hover:bg-blue-600 px-5 py-2 rounded-lg font-semibold transition-colors">Get Started</a>
+      <a href="#get-started" class="text-sm bg-emerald-500 hover:bg-emerald-600 px-5 py-2 rounded-lg font-semibold transition-colors">Get Started</a>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="relative bg-slate-900 text-white pt-28 pb-24 px-6 overflow-hidden min-h-[80vh] flex items-center">
+  <section class="relative bg-slate-900 text-white pt-28 pb-28 px-6 overflow-hidden min-h-[90vh] flex items-center">
     <div class="hero-video-container">
       <video class="hero-video" autoplay muted loop playsinline preload="auto">
         <source src="https://videos.pexels.com/video-files/5838634/5838634-hd_1280_720_30fps.mp4" type="video/mp4">
       </video>
     </div>
     <div class="max-w-4xl mx-auto text-center relative z-10">
-      <div class="inline-block bg-blue-500/10 border border-blue-500/30 rounded-full px-4 py-1.5 text-sm text-blue-300 font-medium mb-6">
-        🚀 The Partnership Tax Intelligence Engine
+      <div class="inline-block bg-emerald-500/10 border border-emerald-500/30 rounded-full px-4 py-1.5 text-sm text-emerald-300 font-medium mb-6">
+        Valuations + Tax Returns + K‑1s — One Engagement
       </div>
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1]">
-        1065s & K‑1s<br>
-        <span class="gradient-text">Intelligently Automated</span>
+        Fund Compliance<br>
+        <span class="gradient-text">In a Box</span>
       </h1>
       <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-        AI-powered mapping from QuickBooks to Form 1065. Automatic K‑1 allocations. Drake-ready export. <strong class="text-white">Whether you need your return filed or want to automate your firm — we've got you.</strong>
+        Stop juggling a valuation firm, a tax CPA, and a fund admin for basic annual compliance.
+        <strong class="text-white">HarvardTax delivers ASC 820 portfolio valuations, Form 1065, and every K‑1 — in one engagement, from one team.</strong>
       </p>
-
-      <!-- Dual CTA -->
-      <div class="mt-10 grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-        <a href="#file-my-return" class="path-card bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-left block">
-          <div class="text-2xl mb-2">📋</div>
-          <div class="font-bold text-lg">File My Return</div>
-          <div class="text-blue-100 text-sm mt-1">I have a partnership or LLC and need my 1065 & K‑1s filed by a CPA.</div>
-          <div class="mt-4 text-sm font-semibold text-white">Get Started →</div>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#get-started" class="cta-pulse bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-lg px-8 py-4 rounded-xl transition-colors">
+          Get Your Fund Compliant →
         </a>
-        <a href="#automate-my-firm" class="path-card bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6 text-left block">
-          <div class="text-2xl mb-2">⚡</div>
-          <div class="font-bold text-lg">Automate My Firm</div>
-          <div class="text-purple-100 text-sm mt-1">I'm a CPA and want to prep 1065s in minutes instead of hours.</div>
-          <div class="mt-4 text-sm font-semibold text-white">See the Platform →</div>
+        <a href="#problem" class="border border-slate-500 hover:border-slate-300 text-slate-200 font-semibold text-lg px-8 py-4 rounded-xl transition-colors">
+          See Why Funds Switch
         </a>
       </div>
-
       <!-- Stats -->
       <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
         <div class="stat-card rounded-xl p-4">
-          <div class="text-2xl font-bold text-blue-400">80%</div>
-          <div class="text-xs text-slate-400 mt-1">Less Prep Time</div>
+          <div class="text-2xl font-bold text-emerald-400">1,000+</div>
+          <div class="text-xs text-slate-400 mt-1">Valuations Delivered</div>
         </div>
         <div class="stat-card rounded-xl p-4">
-          <div class="text-2xl font-bold text-blue-400">40+</div>
-          <div class="text-xs text-slate-400 mt-1">QBO Account Types Mapped</div>
+          <div class="text-2xl font-bold text-emerald-400">100%</div>
+          <div class="text-xs text-slate-400 mt-1">Audit Success Rate</div>
         </div>
         <div class="stat-card rounded-xl p-4">
-          <div class="text-2xl font-bold text-blue-400">Drake</div>
-          <div class="text-xs text-slate-400 mt-1">Direct Export</div>
+          <div class="text-2xl font-bold text-emerald-400">ASC 820</div>
+          <div class="text-xs text-slate-400 mt-1">Fair Value Compliant</div>
         </div>
         <div class="stat-card rounded-xl p-4">
-          <div class="text-2xl font-bold text-blue-400">CPA</div>
+          <div class="text-2xl font-bold text-emerald-400">CPA</div>
           <div class="text-xs text-slate-400 mt-1">Reviewed & Filed</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- The Engine (shared tech) -->
-  <section class="py-20 px-6 bg-slate-50" id="engine">
-    <div class="max-w-5xl mx-auto">
+  <!-- Pain / Problem -->
+  <section class="py-20 px-6 bg-white" id="problem">
+    <div class="max-w-4xl mx-auto">
       <div class="text-center mb-14">
-        <div class="inline-block bg-blue-100 text-blue-700 font-bold text-sm px-4 py-1.5 rounded-full mb-4">The Intelligence Engine</div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Everything Between QuickBooks and the IRS</h2>
-        <p class="text-slate-500 text-lg mt-4">The same AI engine powers both paths — whether we file for you or you file yourself.</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Three Vendors. Three Invoices.<br><span class="text-red-600">One Compliance Nightmare.</span></h2>
+        <p class="mt-4 text-slate-500 text-lg">Here's what every emerging fund manager deals with every year.</p>
       </div>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
-          <div class="text-3xl mb-3">🔗</div>
-          <h3 class="text-lg font-bold text-slate-900">Smart QBO → 1065 Mapping</h3>
-          <p class="text-slate-600 mt-2">40+ QBO AccountSubTypes automatically mapped to the correct 1065 line — income, COGS, deductions, Schedule K, balance sheet. Full transparency. Override anything.</p>
-        </div>
-        <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
-          <div class="text-3xl mb-3">🤖</div>
-          <h3 class="text-lg font-bold text-slate-900">AI Agreement Parser</h3>
-          <p class="text-slate-600 mt-2">Upload a PDF operating agreement and AI extracts partner names, ownership percentages, allocations, preferred returns, carried interest, and special provisions.</p>
-        </div>
-        <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
+
+      <!-- The 3-vendor mess -->
+      <div class="grid md:grid-cols-3 gap-6 mb-14">
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-6 text-center">
           <div class="text-3xl mb-3">📊</div>
-          <h3 class="text-lg font-bold text-slate-900">K‑1 Allocation Engine</h3>
-          <p class="text-slate-600 mt-2">Automatic allocation of ordinary income, portfolio income, deductions, and credits to all partners. Handles rounding, pro-rata splits, and documents every calculation.</p>
+          <h3 class="font-bold text-slate-900">Valuation Firm</h3>
+          <p class="text-slate-600 text-sm mt-2">You hire a firm for ASC 820 portfolio valuations. They deliver a PDF report 6–8 weeks later.</p>
+          <div class="mt-4 text-red-600 font-bold text-lg">$5,000–$15,000</div>
         </div>
-        <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
-          <div class="text-3xl mb-3">📤</div>
-          <h3 class="text-lg font-bold text-slate-900">Drake Trial Balance Export</h3>
-          <p class="text-slate-600 mt-2">Generates Drake-compatible Excel files that import directly via Trial Balance Import. Accounts map to the right screens and lines — zero re-keying in Drake.</p>
-        </div>
-        <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
-          <div class="text-3xl mb-3">✏️</div>
-          <h3 class="text-lg font-bold text-slate-900">Full Override Control</h3>
-          <p class="text-slate-600 mt-2">Every QBO → 1065 mapping is visible and editable. Change any mapping with one click and regenerate instantly. Professional judgment always wins.</p>
-        </div>
-        <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-6 text-center">
           <div class="text-3xl mb-3">📋</div>
-          <h3 class="text-lg font-bold text-slate-900">Workpaper-Ready Output</h3>
-          <p class="text-slate-600 mt-2">Every mapping decision documented. Structured workpapers showing the full QBO-to-1065 audit trail — ready for review, QC, or IRS correspondence.</p>
+          <h3 class="font-bold text-slate-900">Tax CPA</h3>
+          <p class="text-slate-600 text-sm mt-2">You hand the valuation report to your CPA. They re-key it into tax software, prepare the 1065, and generate K‑1s.</p>
+          <div class="mt-4 text-red-600 font-bold text-lg">$8,000–$15,000</div>
+        </div>
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-6 text-center">
+          <div class="text-3xl mb-3">🔄</div>
+          <h3 class="font-bold text-slate-900">You (The Coordinator)</h3>
+          <p class="text-slate-600 text-sm mt-2">You chase both vendors, answer the same questions twice, reconcile discrepancies, and pray the K‑1s go out on time.</p>
+          <div class="mt-4 text-red-600 font-bold text-lg">40+ Hours of Your Time</div>
+        </div>
+      </div>
+
+      <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center">
+        <p class="text-slate-600 text-lg"><strong class="text-slate-900">The dirty secret:</strong> Your K‑1 allocations depend on your valuations. When two separate vendors produce them independently, errors happen at the handoff. Your LPs get wrong K‑1s. You get angry emails. Nobody takes responsibility.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section class="py-20 px-6 bg-slate-900 text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-block bg-emerald-500/10 border border-emerald-500/30 rounded-full px-4 py-1.5 text-sm text-emerald-300 font-medium mb-6">The HarvardTax Approach</div>
+      <h2 class="text-3xl sm:text-4xl font-bold">One Team. One Engagement.<br>Valuations That Flow Directly Into K‑1s.</h2>
+      <p class="mt-6 text-slate-300 text-lg max-w-2xl mx-auto">We do the portfolio valuations <em>and</em> the tax return. The numbers tie because the same team produced them. No handoffs. No reconciliation. No finger-pointing.</p>
+
+      <div class="mt-14 grid sm:grid-cols-2 gap-8 text-left max-w-3xl mx-auto">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+          <div class="text-2xl mb-2">❌</div>
+          <h3 class="font-bold text-red-300">Without HarvardTax</h3>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li>• Hire valuation firm → wait 6–8 weeks</li>
+            <li>• Hire tax CPA → share valuation report</li>
+            <li>• CPA re-keys numbers into Drake/Lacerte</li>
+            <li>• Discrepancies → back-and-forth emails</li>
+            <li>• K‑1s late → angry LP emails</li>
+            <li>• Total cost: $13K–$30K+</li>
+          </ul>
+        </div>
+        <div class="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6">
+          <div class="text-2xl mb-2">✅</div>
+          <h3 class="font-bold text-emerald-300">With HarvardTax</h3>
+          <ul class="mt-3 space-y-2 text-slate-300 text-sm">
+            <li>• One engagement letter, one team</li>
+            <li>• ASC 820 valuations + 1065 + K‑1s together</li>
+            <li>• Valuations flow directly into tax allocations</li>
+            <li>• AI-powered mapping, CPA-reviewed filing</li>
+            <li>• K‑1s delivered on time, every time</li>
+            <li>• Total cost: from $4,999</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PATH A: File My Return -->
-  <section class="py-20 px-6 bg-white" id="file-my-return">
+  <!-- How It Works -->
+  <section class="py-20 px-6 bg-white" id="how-it-works">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-center text-3xl sm:text-4xl font-bold text-slate-900 mb-4">How It Works</h2>
+      <p class="text-center text-slate-500 text-lg mb-16">From fund docs to K‑1 distribution in four steps.</p>
+
+      <div class="space-y-12">
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+          <div class="step-number bg-emerald-500 text-white">1</div>
+          <div>
+            <h3 class="text-xl font-bold text-slate-900">Share Your Fund Documents</h3>
+            <p class="mt-2 text-slate-600 leading-relaxed">Upload your LPA, subscription agreements, cap table, and financial statements. Connect QuickBooks if you have it — or just send us what you've got. Our AI parses the operating agreement to extract allocation rules, partner details, and fund terms automatically.</p>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+          <div class="step-number bg-blue-500 text-white">2</div>
+          <div>
+            <h3 class="text-xl font-bold text-slate-900">We Value Your Portfolio (ASC 820)</h3>
+            <p class="mt-2 text-slate-600 leading-relaxed">Our valuation team — with 1,000+ valuations and Big Four pedigree — values each portfolio company using ASC 820-compliant methodologies. Latest round, OPM backsolve, DCF, market comps — whatever fits. Audit-ready documentation included.</p>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+          <div class="step-number bg-purple-500 text-white">3</div>
+          <div>
+            <h3 class="text-xl font-bold text-slate-900">Valuations Flow Into Your Tax Return</h3>
+            <p class="mt-2 text-slate-600 leading-relaxed">Here's the magic: your portfolio valuations feed directly into the 1065 — unrealized gains/losses, capital account adjustments, Schedule L, M‑1, M‑2. No re-keying, no handoff, no reconciliation gaps. A licensed CPA reviews everything and e-files.</p>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+          <div class="step-number bg-amber-500 text-white">4</div>
+          <div>
+            <h3 class="text-xl font-bold text-slate-900">K‑1s Delivered to Every LP</h3>
+            <p class="mt-2 text-slate-600 leading-relaxed">Each LP gets their individual K‑1 with properly allocated income, gains, losses, and deductions — all consistent with the valuations. Distribute via our portal, email, or download the full package.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us / Credibility -->
+  <section class="py-20 px-6 bg-slate-50">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-14">
-        <div class="inline-block bg-green-100 text-green-700 font-bold text-sm px-4 py-1.5 rounded-full mb-4">For Business Owners</div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Partnership Returns, Filed for You</h2>
-        <p class="text-slate-500 text-lg mt-4 max-w-2xl mx-auto">Our AI preps it. A licensed CPA reviews and files it. You get your K‑1s and move on with your life.</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Why Fund Managers Trust HarvardTax</h2>
+        <p class="text-slate-500 text-lg mt-4">We're not a generic accounting firm that also does valuations. We're valuation specialists who built a tax engine.</p>
       </div>
-
-      <div class="space-y-10" id="how-it-works">
-        <div class="flex flex-col md:flex-row gap-6 items-start">
-          <div class="step-number bg-blue-500 text-white shrink-0">1</div>
-          <div>
-            <h3 class="text-xl font-bold text-slate-900">Share Your Financials</h3>
-            <p class="mt-2 text-slate-600 leading-relaxed">Connect QuickBooks Online with one click, or upload your trial balance and financial statements. We pull everything we need — securely, read-only.</p>
-          </div>
-        </div>
-        <div class="flex flex-col md:flex-row gap-6 items-start">
-          <div class="step-number bg-purple-500 text-white shrink-0">2</div>
-          <div>
-            <h3 class="text-xl font-bold text-slate-900">Upload Your Operating Agreement</h3>
-            <p class="mt-2 text-slate-600 leading-relaxed">Our AI reads your operating agreement and extracts partner names, ownership percentages, profit/loss allocations, preferred returns, and special provisions. Review and confirm — done.</p>
-          </div>
-        </div>
-        <div class="flex flex-col md:flex-row gap-6 items-start">
-          <div class="step-number bg-green-500 text-white shrink-0">3</div>
-          <div>
-            <h3 class="text-xl font-bold text-slate-900">CPA Review & Filing</h3>
-            <p class="mt-2 text-slate-600 leading-relaxed">A licensed CPA from our network reviews every mapping, checks allocations, and ensures compliance. They sign off and e-file your return with the IRS.</p>
-          </div>
-        </div>
-        <div class="flex flex-col md:flex-row gap-6 items-start">
-          <div class="step-number bg-amber-500 text-white shrink-0">4</div>
-          <div>
-            <h3 class="text-xl font-bold text-slate-900">Get Your K‑1s</h3>
-            <p class="mt-2 text-slate-600 leading-relaxed">Receive individual K-1 PDFs for every partner, plus your filed 1065. Distribute to your partners and you're done — no tax software, no spreadsheets, no stress.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service Pricing -->
-      <div class="mt-16" id="pricing">
-        <h3 class="text-center text-2xl font-bold text-slate-900 mb-4">Flat-Fee Filing</h3>
-        <p class="text-center text-slate-500 mb-10">No hourly billing. No surprises. Know your cost upfront.</p>
-        <div class="grid sm:grid-cols-3 gap-8">
-          <div class="bg-white rounded-2xl p-8 border-2 border-slate-200 text-center">
-            <h4 class="font-bold text-lg text-slate-900">Simple LLC</h4>
-            <p class="text-slate-500 text-sm mt-1">2–5 partners, straightforward splits</p>
-            <div class="mt-4 text-4xl font-black text-slate-900">$499</div>
-            <div class="text-slate-500 text-sm mt-1">per return</div>
-            <ul class="mt-6 space-y-2 text-sm text-slate-600 text-left">
-              <li>✓ Form 1065 + K‑1s</li>
-              <li>✓ QBO or document upload</li>
-              <li>✓ CPA review & e-filing</li>
-              <li>✓ Partner K-1 distribution</li>
-            </ul>
-            <a href="mailto:dar@harvardtax.com?subject=Simple LLC Return&body=Hi, I'd like to file my partnership return.%0A%0AEntity name:%0ANumber of partners:%0A" class="mt-8 block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-colors">Get Started</a>
-          </div>
-          <div class="bg-white rounded-2xl p-8 border-2 border-blue-500 text-center relative">
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">Most Popular</div>
-            <h4 class="font-bold text-lg text-slate-900">Multi-Member</h4>
-            <p class="text-slate-500 text-sm mt-1">6–20 partners, varied allocations</p>
-            <div class="mt-4 text-4xl font-black text-slate-900">$799</div>
-            <div class="text-slate-500 text-sm mt-1">per return</div>
-            <ul class="mt-6 space-y-2 text-sm text-slate-600 text-left">
-              <li>✓ Everything in Simple</li>
-              <li>✓ Complex allocation support</li>
-              <li>✓ Capital account tracking</li>
-              <li>✓ Schedule L/M-1/M-2</li>
-            </ul>
-            <a href="mailto:dar@harvardtax.com?subject=Multi-Member Return&body=Hi, I'd like to file my partnership return.%0A%0AEntity name:%0ANumber of partners:%0A" class="mt-8 block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-colors">Get Started</a>
-          </div>
-          <div class="bg-white rounded-2xl p-8 border-2 border-slate-200 text-center">
-            <h4 class="font-bold text-lg text-slate-900">Fund / SPV</h4>
-            <p class="text-slate-500 text-sm mt-1">20+ investors, fund structures</p>
-            <div class="mt-4 text-4xl font-black text-slate-900">$1,499</div>
-            <div class="text-slate-500 text-sm mt-1">per return</div>
-            <ul class="mt-6 space-y-2 text-sm text-slate-600 text-left">
-              <li>✓ Everything in Multi-Member</li>
-              <li>✓ Carried interest / waterfalls</li>
-              <li>✓ Multiple closings</li>
-              <li>✓ Investor K-1 portal</li>
-            </ul>
-            <a href="mailto:dar@harvardtax.com?subject=Fund/SPV Return&body=Hi, I'd like to file my fund's partnership return.%0A%0AFund name:%0ANumber of investors:%0AStructure (LP, LLC, SPV):%0A" class="mt-8 block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-colors">Get Started</a>
-          </div>
-        </div>
-
-        <!-- Accuracy guarantee -->
-        <div class="mt-10 bg-slate-50 rounded-2xl p-8 border border-slate-200">
-          <div class="flex flex-col md:flex-row items-center gap-6">
-            <div class="text-5xl">🛡️</div>
-            <div>
-              <h4 class="font-bold text-lg text-slate-900">Accuracy Guarantee</h4>
-              <p class="text-slate-600 mt-1">Every return is AI-prepped and CPA-reviewed. If our work results in an IRS penalty, we cover the penalty and re-file at no cost.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Comparison -->
-  <section class="py-16 px-6 bg-slate-900 text-white">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-center text-3xl font-bold mb-12">Why HarvardTax vs. a Traditional CPA?</h2>
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-red-900/30 border border-red-800/50 rounded-2xl p-8">
-          <h3 class="text-lg font-bold text-red-300 mb-4">❌ Traditional CPA Firm</h3>
-          <ul class="space-y-3 text-slate-300 text-sm">
-            <li>• $200–400/hr billing</li>
-            <li>• 2–4 week turnaround</li>
-            <li>• Manual data entry from your books</li>
-            <li>• Opaque process — you wait and hope</li>
-            <li>• Errors from re-keying data</li>
-            <li>• Final bill: $2,000–$5,000+</li>
-          </ul>
+        <div class="bg-white rounded-2xl p-8 border border-slate-200">
+          <div class="text-3xl mb-3">🏛️</div>
+          <h3 class="text-lg font-bold text-slate-900">Wall Street Pedigree</h3>
+          <p class="text-slate-600 mt-2">Deutsche Bank M&A, Lehman Brothers FIG, Bain & Company. Our team has executed billions in transactions at the world's top institutions. Your fund gets institutional-quality valuations.</p>
         </div>
-        <div class="bg-blue-900/30 border border-blue-800/50 rounded-2xl p-8">
-          <h3 class="text-lg font-bold text-blue-300 mb-4">✅ HarvardTax</h3>
-          <ul class="space-y-3 text-slate-300 text-sm">
-            <li>• Flat fee — know your cost upfront</li>
-            <li>• Days, not weeks</li>
-            <li>• AI pulls directly from QuickBooks</li>
-            <li>• See every mapping, override anything</li>
-            <li>• Zero re-keying = fewer errors</li>
-            <li>• Still CPA-reviewed and e-filed</li>
-          </ul>
+        <div class="bg-white rounded-2xl p-8 border border-slate-200">
+          <div class="text-3xl mb-3">📈</div>
+          <h3 class="text-lg font-bold text-slate-900">1,000+ Valuations Delivered</h3>
+          <p class="text-slate-600 mt-2">Founded one of the largest 409A firms in the U.S. (acquired by Ryan, $1B+ revenue). Built Carta's exclusive valuation practice. We've seen every structure, every edge case.</p>
         </div>
+        <div class="bg-white rounded-2xl p-8 border border-slate-200">
+          <div class="text-3xl mb-3">🤖</div>
+          <h3 class="text-lg font-bold text-slate-900">AI-Powered Intelligence</h3>
+          <p class="text-slate-600 mt-2">Our AI reads operating agreements, maps QuickBooks accounts to 1065 lines, and computes K‑1 allocations automatically. The CPA reviews — not re-enters — the work.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-slate-200">
+          <div class="text-3xl mb-3">🔗</div>
+          <h3 class="text-lg font-bold text-slate-900">Valuations → K‑1s: Zero Gaps</h3>
+          <p class="text-slate-600 mt-2">The #1 source of K‑1 errors in funds is the handoff between valuation and tax. We eliminate it entirely. Same team, same data, same engagement.</p>
+        </div>
+      </div>
+
+      <!-- Logos / credibility badges -->
+      <div class="mt-12 flex flex-wrap justify-center gap-4 text-sm text-slate-400">
+        <span class="bg-white border border-slate-200 px-4 py-2 rounded-full">ASC 820 Compliant</span>
+        <span class="bg-white border border-slate-200 px-4 py-2 rounded-full">IRS Form 1065</span>
+        <span class="bg-white border border-slate-200 px-4 py-2 rounded-full">Schedule K-1</span>
+        <span class="bg-white border border-slate-200 px-4 py-2 rounded-full">100% Audit Success</span>
+        <span class="bg-white border border-slate-200 px-4 py-2 rounded-full">QuickBooks Integration</span>
+        <span class="bg-white border border-slate-200 px-4 py-2 rounded-full">Drake Export</span>
       </div>
     </div>
   </section>
 
-  <!-- PATH B: For CPA Firms -->
-  <section class="py-20 px-6 bg-white" id="automate-my-firm">
+  <!-- Who It's For -->
+  <section class="py-20 px-6 bg-white">
     <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-14">
-        <div class="inline-block bg-purple-100 text-purple-700 font-bold text-sm px-4 py-1.5 rounded-full mb-4">For CPA Firms</div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Prep 1065s in Minutes, Not Hours</h2>
-        <p class="text-slate-500 text-lg mt-4 max-w-2xl mx-auto">The same intelligence engine, in your hands. Connect your client's QuickBooks, review the mappings, export to Drake, and file.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8 mb-14">
-        <div class="text-center p-6">
-          <div class="w-16 h-16 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-3xl">⚡</span></div>
-          <h3 class="font-bold text-slate-900">10 Min Prep vs. 10 Hours</h3>
-          <p class="text-slate-500 text-sm mt-2">QBO mapping, allocation, and Drake export handled automatically. You spend your time reviewing, not typing.</p>
-        </div>
-        <div class="text-center p-6">
-          <div class="w-16 h-16 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-3xl">🔍</span></div>
-          <h3 class="font-bold text-slate-900">Full Transparency</h3>
-          <p class="text-slate-500 text-sm mt-2">Every mapping is visible and overridable. No black boxes. Workpaper-ready documentation for every return.</p>
-        </div>
-        <div class="text-center p-6">
-          <div class="w-16 h-16 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-3xl">🎯</span></div>
-          <h3 class="font-bold text-slate-900">Fits Your Workflow</h3>
-          <p class="text-slate-500 text-sm mt-2">Exports to Drake via Trial Balance Import. No new e-filing system. Plugs into how you already work.</p>
-        </div>
-      </div>
-
-      <!-- Platform Pricing -->
+      <h2 class="text-center text-3xl sm:text-4xl font-bold text-slate-900 mb-14">Built for Funds That Are Tired of the Runaround</h2>
       <div class="grid sm:grid-cols-3 gap-8">
-        <div class="bg-white rounded-2xl p-8 border-2 border-slate-200 text-center">
-          <h4 class="font-bold text-lg text-slate-900">Starter</h4>
-          <div class="mt-4 text-4xl font-black text-slate-900">Free</div>
-          <div class="text-slate-500 text-sm mt-1">3 returns included</div>
-          <ul class="mt-6 space-y-2 text-sm text-slate-600 text-left">
-            <li>✓ QBO connection</li>
-            <li>✓ 1065 mapping engine</li>
-            <li>✓ K-1 allocation</li>
-            <li>✓ Drake export</li>
-          </ul>
-          <a href="#get-started" class="mt-8 block bg-slate-100 hover:bg-slate-200 text-slate-900 font-semibold py-3 rounded-lg transition-colors">Try Free</a>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4"><span class="text-3xl">🚀</span></div>
+          <h3 class="font-bold text-lg text-slate-900">Emerging Fund Managers</h3>
+          <p class="text-slate-500 mt-2 text-sm">Running your first or second fund? You need audit-ready valuations and on-time K‑1s without the $30K price tag of Big Four firms.</p>
         </div>
-        <div class="bg-white rounded-2xl p-8 border-2 border-purple-500 text-center relative">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full">Best Value</div>
-          <h4 class="font-bold text-lg text-slate-900">Professional</h4>
-          <div class="mt-4 text-4xl font-black text-slate-900">$49</div>
-          <div class="text-slate-500 text-sm mt-1">per return</div>
-          <ul class="mt-6 space-y-2 text-sm text-slate-600 text-left">
-            <li>✓ Unlimited returns</li>
-            <li>✓ AI agreement parser</li>
-            <li>✓ Workpaper export</li>
-            <li>✓ Override & regenerate</li>
-            <li>✓ Priority support</li>
-          </ul>
-          <a href="#get-started" class="mt-8 block bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 rounded-lg transition-colors">Get Started</a>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4"><span class="text-3xl">🏗️</span></div>
+          <h3 class="font-bold text-lg text-slate-900">Syndicates & SPVs</h3>
+          <p class="text-slate-500 mt-2 text-sm">Deal-by-deal SPVs with 20–100 investors each. You need K‑1s that tie to actual portfolio performance, not guesswork. We handle it all.</p>
         </div>
-        <div class="bg-white rounded-2xl p-8 border-2 border-slate-200 text-center">
-          <h4 class="font-bold text-lg text-slate-900">Firm</h4>
-          <div class="mt-4 text-4xl font-black text-slate-900">$299</div>
-          <div class="text-slate-500 text-sm mt-1">per month</div>
-          <ul class="mt-6 space-y-2 text-sm text-slate-600 text-left">
-            <li>✓ Unlimited returns</li>
-            <li>✓ Multi-user access</li>
-            <li>✓ Batch processing</li>
-            <li>✓ API access</li>
-            <li>✓ Dedicated support</li>
-          </ul>
-          <a href="mailto:dar@harvardtax.com?subject=HarvardTax Firm Plan" class="mt-8 block bg-slate-100 hover:bg-slate-200 text-slate-900 font-semibold py-3 rounded-lg transition-colors">Contact Us</a>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4"><span class="text-3xl">🏢</span></div>
+          <h3 class="font-bold text-lg text-slate-900">Multi-Series Platforms</h3>
+          <p class="text-slate-500 mt-2 text-sm">Series LLCs with multiple investment vehicles. We handle inter-series allocations, varying investor compositions, and multiple closings.</p>
         </div>
       </div>
-      <p class="text-center text-slate-400 text-sm mt-8">At $49/return, a 20-partner K-1 return that used to take 10 hours pays for itself in the first 15 minutes.</p>
     </div>
   </section>
 
-  <!-- CPA Partner Network -->
-  <section class="py-20 px-6 bg-slate-50" id="cpa-partners">
+  <!-- Pricing -->
+  <section class="py-20 px-6 bg-slate-50" id="pricing">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-center text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Flat-Fee Fund Compliance</h2>
+      <p class="text-center text-slate-500 text-lg mb-14">No hourly billing. No scope creep. Know your cost before you start.</p>
+
+      <div class="grid sm:grid-cols-3 gap-8">
+        <!-- SPV -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-slate-200 text-center">
+          <h3 class="font-bold text-lg text-slate-900">Single SPV</h3>
+          <p class="text-slate-500 text-sm mt-1">1 investment, up to 25 investors</p>
+          <div class="mt-4 text-4xl font-black text-slate-900">$4,999</div>
+          <div class="text-slate-500 text-sm mt-1">per year</div>
+          <ul class="mt-6 space-y-2 text-sm text-slate-600 text-left">
+            <li>✓ ASC 820 portfolio valuation</li>
+            <li>✓ Form 1065 preparation</li>
+            <li>✓ K‑1s for all investors</li>
+            <li>✓ CPA review & e-filing</li>
+            <li>✓ Audit-ready workpapers</li>
+          </ul>
+          <a href="mailto:dar@harvardtax.com?subject=Single SPV Compliance&body=Hi, I need fund compliance for a single SPV.%0A%0AFund/SPV name:%0ANumber of investors:%0AInvestment(s):%0A" class="mt-8 block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 rounded-lg transition-colors">Get Started</a>
+        </div>
+
+        <!-- Fund -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-emerald-500 text-center relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">Most Popular</div>
+          <h3 class="font-bold text-lg text-slate-900">Fund</h3>
+          <p class="text-slate-500 text-sm mt-1">Multi-investment, up to 50 LPs</p>
+          <div class="mt-4 text-4xl font-black text-slate-900">$7,999</div>
+          <div class="text-slate-500 text-sm mt-1">per year</div>
+          <ul class="mt-6 space-y-2 text-sm text-slate-600 text-left">
+            <li>✓ Everything in Single SPV</li>
+            <li>✓ Multi-company portfolio valuation</li>
+            <li>✓ Capital account tracking</li>
+            <li>✓ Schedule L / M‑1 / M‑2</li>
+            <li>✓ LP K‑1 distribution portal</li>
+            <li>✓ Quarterly valuation updates</li>
+          </ul>
+          <a href="mailto:dar@harvardtax.com?subject=Fund Compliance&body=Hi, I need fund compliance for my venture fund.%0A%0AFund name:%0AAUM:%0ANumber of LPs:%0ANumber of portfolio companies:%0A" class="mt-8 block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 rounded-lg transition-colors">Get Started</a>
+        </div>
+
+        <!-- Platform / Multi-Series -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-slate-200 text-center">
+          <h3 class="font-bold text-lg text-slate-900">Platform / Multi-Series</h3>
+          <p class="text-slate-500 text-sm mt-1">Multiple vehicles, 50+ investors</p>
+          <div class="mt-4 text-4xl font-black text-slate-900">Custom</div>
+          <div class="text-slate-500 text-sm mt-1">volume pricing</div>
+          <ul class="mt-6 space-y-2 text-sm text-slate-600 text-left">
+            <li>✓ Everything in Fund</li>
+            <li>✓ Multi-series / multi-vehicle</li>
+            <li>✓ Varying investor compositions</li>
+            <li>✓ Multiple closings per series</li>
+            <li>✓ Carried interest / waterfalls</li>
+            <li>✓ Dedicated engagement team</li>
+          </ul>
+          <a href="mailto:dar@harvardtax.com?subject=Platform/Multi-Series Compliance&body=Hi, I need compliance for a multi-series platform.%0A%0APlatform name:%0ANumber of series/vehicles:%0ATotal investors across all series:%0A" class="mt-8 block bg-slate-800 hover:bg-slate-900 text-white font-semibold py-3 rounded-lg transition-colors">Contact Us</a>
+        </div>
+      </div>
+
+      <!-- Savings callout -->
+      <div class="mt-12 bg-emerald-50 rounded-2xl p-8 border border-emerald-200">
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <div class="text-5xl">💰</div>
+          <div>
+            <h3 class="font-bold text-lg text-slate-900">Save $8,000–$20,000 vs. Separate Vendors</h3>
+            <p class="text-slate-600 mt-1">Industry data shows fund managers spend $8K–$15K on tax prep alone, plus $5K–$15K on valuations. HarvardTax bundles both from $4,999 — with better accuracy because the numbers actually tie together.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Also For: Simple Partnerships -->
+  <section class="py-20 px-6 bg-white">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12">
-        <div class="inline-block bg-green-100 text-green-700 font-bold text-sm px-4 py-1.5 rounded-full mb-4">CPA Partner Network</div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Get Client Referrals + The Best Tools</h2>
-        <p class="text-slate-500 text-lg mt-4 max-w-2xl mx-auto">Join our CPA partner network. We send you AI-prepped partnership returns — you review, file, and earn. Plus, use HarvardTax free for your own clients.</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Not a Fund? We Do LLCs Too.</h2>
+        <p class="text-slate-500 text-lg mt-4">HarvardTax also prepares 1065 partnership returns for straightforward LLCs and partnerships.</p>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center">
-          <div class="text-3xl mb-3">📥</div>
-          <h3 class="font-bold text-slate-900">Receive Prepped Returns</h3>
-          <p class="text-slate-500 text-sm mt-2">We handle client intake and AI prep. You receive returns that are 90% done — review, adjust, sign off.</p>
+      <div class="grid sm:grid-cols-3 gap-8">
+        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center">
+          <h4 class="font-bold text-slate-900">Simple LLC</h4>
+          <p class="text-slate-500 text-xs mt-1">2–5 partners</p>
+          <div class="mt-3 text-3xl font-black text-slate-900">$499</div>
+          <a href="mailto:dar@harvardtax.com?subject=Simple LLC Return" class="mt-4 block text-emerald-600 font-semibold text-sm hover:text-emerald-700">Get Started →</a>
         </div>
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center">
-          <div class="text-3xl mb-3">💰</div>
-          <h3 class="font-bold text-slate-900">Competitive Per-Return Fee</h3>
-          <p class="text-slate-500 text-sm mt-2">Earn a professional fee for each return you review and file. Steady deal flow without the marketing overhead.</p>
+        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center">
+          <h4 class="font-bold text-slate-900">Multi-Member</h4>
+          <p class="text-slate-500 text-xs mt-1">6–20 partners</p>
+          <div class="mt-3 text-3xl font-black text-slate-900">$799</div>
+          <a href="mailto:dar@harvardtax.com?subject=Multi-Member Return" class="mt-4 block text-emerald-600 font-semibold text-sm hover:text-emerald-700">Get Started →</a>
         </div>
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center">
-          <div class="text-3xl mb-3">🆓</div>
-          <h3 class="font-bold text-slate-900">Free Platform Access</h3>
-          <p class="text-slate-500 text-sm mt-2">Partners get full access to HarvardTax for their own client book. Use the engine for all your partnership returns.</p>
+        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center">
+          <h4 class="font-bold text-slate-900">Complex / 20+</h4>
+          <p class="text-slate-500 text-xs mt-1">Special allocations</p>
+          <div class="mt-3 text-3xl font-black text-slate-900">$1,499</div>
+          <a href="mailto:dar@harvardtax.com?subject=Complex Partnership Return" class="mt-4 block text-emerald-600 font-semibold text-sm hover:text-emerald-700">Get Started →</a>
         </div>
-      </div>
-      <div class="mt-10 text-center">
-        <a href="mailto:dar@harvardtax.com?subject=CPA Partner Application&body=Hi, I'm interested in joining the HarvardTax CPA partner network.%0A%0AName:%0AFirm:%0AState(s) licensed:%0AEFIN:%0APartnership returns per year:%0A" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold text-lg px-8 py-4 rounded-xl transition-colors">
-          Apply to Join the Network →
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- Trust -->
+  <!-- For CPAs -->
+  <section class="py-20 px-6 bg-slate-900 text-white" id="for-cpas">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <div class="inline-block bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-1.5 text-sm text-purple-300 font-medium mb-4">For CPA Firms</div>
+        <h2 class="text-3xl sm:text-4xl font-bold">Two Ways to Work With Us</h2>
+        <p class="mt-4 text-slate-400 text-lg">Use our platform for your own clients, or join our partner network and receive prepped returns.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Platform -->
+        <div class="path-card bg-white/5 border border-white/10 rounded-2xl p-8">
+          <div class="text-2xl mb-3">⚡</div>
+          <h3 class="text-xl font-bold text-purple-300">Use the Platform</h3>
+          <p class="text-slate-400 mt-2 text-sm">Connect your client's QuickBooks, review the AI-generated mappings, export a Drake-ready trial balance, and file. Prep time drops from 10 hours to 10 minutes.</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-400">
+            <li>• Free for first 3 returns</li>
+            <li>• $49/return after that</li>
+            <li>• $299/mo for unlimited (firm plan)</li>
+          </ul>
+          <a href="mailto:dar@harvardtax.com?subject=HarvardTax Platform Access&body=Hi, I'd like platform access for my firm.%0A%0AFirm:%0ADrake version:%0APartnership returns per year:%0A" class="mt-6 inline-block text-purple-300 font-semibold text-sm hover:text-purple-200">Request Access →</a>
+        </div>
+
+        <!-- Partner Network -->
+        <div class="path-card bg-white/5 border border-white/10 rounded-2xl p-8">
+          <div class="text-2xl mb-3">🤝</div>
+          <h3 class="text-xl font-bold text-emerald-300">Join the Partner Network</h3>
+          <p class="text-slate-400 mt-2 text-sm">We send you AI-prepped partnership returns. You review in Drake, file, and earn a professional fee. Steady deal flow without marketing.</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-400">
+            <li>• Receive prepped returns ready for review</li>
+            <li>• Competitive per-return fee</li>
+            <li>• Free platform access for your own clients</li>
+          </ul>
+          <a href="mailto:dar@harvardtax.com?subject=CPA Partner Application&body=Hi, I'm interested in the CPA partner network.%0A%0AName:%0AFirm:%0AState(s) licensed:%0AEFIN:%0A" class="mt-6 inline-block text-emerald-300 font-semibold text-sm hover:text-emerald-200">Apply to Partner →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accuracy Guarantee -->
   <section class="py-16 px-6 bg-white">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6">Built by Tax & Valuation Professionals</h2>
-      <p class="text-slate-600 text-lg leading-relaxed">
-        HarvardTax was created by professionals with 20+ years of experience and 1,000+ business valuations.
-        We built this because we were tired of the manual grind — and we knew AI could do the prep work while CPAs focus on what actually matters.
-      </p>
-      <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm text-slate-400">
-        <span class="bg-slate-100 px-4 py-2 rounded-full">IRS Form 1065 Compliant</span>
-        <span class="bg-slate-100 px-4 py-2 rounded-full">Schedule K-1 Ready</span>
-        <span class="bg-slate-100 px-4 py-2 rounded-full">QuickBooks Certified</span>
-        <span class="bg-slate-100 px-4 py-2 rounded-full">Drake Integration</span>
-        <span class="bg-slate-100 px-4 py-2 rounded-full">SOC 2 Roadmap</span>
+    <div class="max-w-3xl mx-auto">
+      <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <div class="text-5xl">🛡️</div>
+          <div>
+            <h3 class="font-bold text-lg text-slate-900">Accuracy Guarantee</h3>
+            <p class="text-slate-600 mt-1">Every return is AI-prepped and CPA-reviewed. Every valuation is senior-led and audit-ready. If our work results in an IRS penalty or audit finding, we cover the penalty and re-do the work at no cost.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-20 px-6 bg-gradient-to-br from-blue-600 to-purple-700 text-white" id="get-started">
+  <section class="py-20 px-6 bg-gradient-to-br from-emerald-600 to-emerald-800 text-white" id="get-started">
     <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to Get Started?</h2>
-      <p class="text-blue-100 text-lg mb-8">Whether you need your return filed or want to automate your firm — we're here.</p>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Your LPs Deserve K‑1s That Tie<br>to Real Valuations.</h2>
+      <p class="text-emerald-100 text-lg mb-8">Stop coordinating vendors. Get fund compliance from one team that does valuations <em>and</em> tax.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="mailto:dar@harvardtax.com?subject=File My Partnership Return&body=Hi, I need my partnership return filed.%0A%0AEntity name:%0ANumber of partners:%0AHave QuickBooks? (yes/no):%0A" class="bg-white text-blue-700 font-bold text-lg px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors shadow-lg">
-          File My Return →
+        <a href="mailto:dar@harvardtax.com?subject=Fund Compliance Inquiry&body=Hi, I'm interested in HarvardTax fund compliance.%0A%0AFund/entity name:%0AType (VC fund, SPV, syndicate, LLC):%0ANumber of investors/partners:%0ANumber of portfolio companies:%0A" class="bg-white text-emerald-700 font-bold text-lg px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors shadow-lg">
+          Get Fund Compliant →
         </a>
-        <a href="mailto:dar@harvardtax.com?subject=HarvardTax Platform Access&body=Hi, I'd like access to the HarvardTax platform for my firm.%0A%0AName:%0AFirm:%0APartnership returns per year:%0ADrake version:%0A" class="bg-white/10 border-2 border-white/30 text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-white/20 transition-colors">
-          Automate My Firm →
+        <a href="tel:+13103840970" class="bg-white/10 border-2 border-white/30 text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-white/20 transition-colors">
+          Call (310) 384-0970
         </a>
       </div>
-      <p class="mt-6 text-blue-200 text-sm">Or email us: <a href="mailto:dar@harvardtax.com" class="underline text-white">dar@harvardtax.com</a> · <a href="tel:+13103840970" class="underline text-white">(310) 384-0970</a></p>
+      <p class="mt-6 text-emerald-200 text-sm">Or email <a href="mailto:dar@harvardtax.com" class="underline text-white">dar@harvardtax.com</a> — we respond within 24 hours.</p>
     </div>
   </section>
 
@@ -422,28 +451,28 @@
       <h2 class="text-center text-2xl font-bold text-slate-900 mb-10">Frequently Asked Questions</h2>
       <div class="space-y-6">
         <details class="bg-white rounded-xl border border-slate-200 p-6">
-          <summary class="font-semibold text-slate-900 cursor-pointer">I'm a business owner — do I need to know anything about taxes?</summary>
-          <p class="mt-3 text-slate-600 text-sm leading-relaxed">No. Connect your QuickBooks and upload your operating agreement. Our AI handles the mapping and a licensed CPA reviews and files everything. You just get your K-1s.</p>
+          <summary class="font-semibold text-slate-900 cursor-pointer">How are your valuations different from my fund admin's?</summary>
+          <p class="mt-3 text-slate-600 text-sm leading-relaxed">Most fund admins don't do valuations at all — they refer out to third-party firms. Those firms produce a standalone report that then has to be manually integrated into your tax return. We do both, so the valuations flow directly into K‑1 allocations with zero manual handoff.</p>
         </details>
         <details class="bg-white rounded-xl border border-slate-200 p-6">
-          <summary class="font-semibold text-slate-900 cursor-pointer">I'm a CPA — does this replace Drake?</summary>
-          <p class="mt-3 text-slate-600 text-sm leading-relaxed">No. HarvardTax sits between QuickBooks and Drake. We automate the mapping and allocation, then export a trial balance file that imports directly into Drake. You still review and e-file in Drake.</p>
+          <summary class="font-semibold text-slate-900 cursor-pointer">Are your ASC 820 valuations audit-ready?</summary>
+          <p class="mt-3 text-slate-600 text-sm leading-relaxed">Yes. Our team has delivered 1,000+ valuations with a 100% audit success rate. We provide full documentation including methodology selection, comparable analysis, discount rates, and fair value hierarchy classification — ready for Big Four review.</p>
         </details>
         <details class="bg-white rounded-xl border border-slate-200 p-6">
-          <summary class="font-semibold text-slate-900 cursor-pointer">What if a mapping is wrong?</summary>
-          <p class="mt-3 text-slate-600 text-sm leading-relaxed">Every mapping is visible and overridable. Change any QBO → 1065 line mapping with one click and regenerate. For filing clients, your CPA catches these in review. For platform users, you're in full control.</p>
+          <summary class="font-semibold text-slate-900 cursor-pointer">What if I already have a fund admin?</summary>
+          <p class="mt-3 text-slate-600 text-sm leading-relaxed">We complement your fund admin, not replace them. Your admin handles capital calls, distributions, and LP communications. We handle the annual compliance that most admins don't — portfolio valuations and the tax return. Many fund admins refer these services out anyway.</p>
         </details>
         <details class="bg-white rounded-xl border border-slate-200 p-6">
-          <summary class="font-semibold text-slate-900 cursor-pointer">What types of partnerships are supported?</summary>
-          <p class="mt-3 text-slate-600 text-sm leading-relaxed">LLCs, LPs, LLPs, general partnerships, and fund/SPV structures. Pro-rata allocations now, with waterfall, preferred return, and carried interest support coming soon.</p>
+          <summary class="font-semibold text-slate-900 cursor-pointer">What if I just need a tax return, not valuations?</summary>
+          <p class="mt-3 text-slate-600 text-sm leading-relaxed">Absolutely. We prepare standalone 1065 returns and K‑1s for LLCs, partnerships, and funds starting at $499. The bundle pricing is for funds that need both valuations and tax — but you can buy either service independently.</p>
         </details>
         <details class="bg-white rounded-xl border border-slate-200 p-6">
-          <summary class="font-semibold text-slate-900 cursor-pointer">Is my data secure?</summary>
-          <p class="mt-3 text-slate-600 text-sm leading-relaxed">Read-only QBO access via OAuth2. Data encrypted in transit and at rest. SSNs used only for K-1 generation and not stored permanently.</p>
+          <summary class="font-semibold text-slate-900 cursor-pointer">Can you handle our fund's deadline?</summary>
+          <p class="mt-3 text-slate-600 text-sm leading-relaxed">Partnership returns are due March 15 (or September 15 with extension). We can file Form 7004 extensions and work with your timeline. For new engagements starting close to the deadline, we'll file the extension first and then complete the return with the care it deserves.</p>
         </details>
         <details class="bg-white rounded-xl border border-slate-200 p-6">
-          <summary class="font-semibold text-slate-900 cursor-pointer">What about Lacerte or CCH ProSystem?</summary>
-          <p class="mt-3 text-slate-600 text-sm leading-relaxed">Drake is our first integration — the most popular tax software among small and mid-size firms. Lacerte and CCH support are on the roadmap.</p>
+          <summary class="font-semibold text-slate-900 cursor-pointer">Do you replace my fund administrator?</summary>
+          <p class="mt-3 text-slate-600 text-sm leading-relaxed">No. HarvardTax handles annual compliance (valuations + tax). Your fund admin handles ongoing operations — capital calls, distributions, LP onboarding, NAV reporting. We work alongside your admin, not instead of them. If you don't have an admin, we can recommend one.</p>
         </details>
       </div>
     </div>
@@ -453,23 +482,20 @@
   <footer class="bg-slate-900 text-slate-400 py-10 px-6">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
       <div>
-        <span class="text-white font-bold text-lg">Harvard<span class="text-blue-400">Tax</span></span>
-        <span class="ml-3 text-sm">The partnership tax intelligence engine.</span>
+        <span class="text-white font-bold text-lg">Harvard<span class="text-emerald-400">Tax</span></span>
+        <span class="ml-3 text-sm">Fund compliance in a box.</span>
       </div>
       <div class="flex gap-6 text-sm">
-        <a href="mailto:dar@harvardtax.com" class="hover:text-white transition">Contact</a>
+        <a href="mailto:dar@harvardtax.com" class="hover:text-white transition">dar@harvardtax.com</a>
         <a href="tel:+13103840970" class="hover:text-white transition">(310) 384-0970</a>
-        <a href="https://github.com/darfaz/harvardtax" class="hover:text-white transition">GitHub</a>
       </div>
       <div class="text-sm">© 2026 HarvardTax. All rights reserved.</div>
     </div>
   </footer>
 
   <script>
-    // Force video play
     const v = document.querySelector('video');
     if (v) v.play().catch(() => {});
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
